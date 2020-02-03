@@ -16,44 +16,27 @@ require 'directors_database'
   
   
 
-#def directors_totals(nds)
-#result  = {}
-#directors_index = 0 
- # while directors_index < nds.length do
-  #  movie_list = nds[directors_index]
-   # director_name = nds[directors_index][:name]
-  #  movie_index = 0 
-   # director_total = 0 
-    #  while movie_index < movie_list.length do
-     #   director_total += movie_list[movie_index][:worldwide_gross]
-      #  movie_index += 1
-#      end
- #     result[:director_name]
-  #    result[:director_name] = director_total
-   #   director_index += 1
-  #  end
-   # result
-#end 
-
 def directors_totals(nds)
   director_index = 0
-  totals = {}
+  result = {}
 
   while director_index < nds.length do
     director_name = nds[director_index][:name]
-    totals[director_name] = 0
+    result[director_name] = 0
     movie_index = 0
 
     while movie_index < nds[director_index][:movies].length do
-      totals[director_name] += nds[director_index][:movies][movie_index][:worldwide_gross]
+      result[director_name] += nds[director_index][:movies][movie_index][:worldwide_gross]
       movie_index += 1
     end
 
     director_index += 1
   end
 
-  totals
-end 
+  result
+end
+      
+ 
 
 #grand_total = 0
 #row_index = 0
