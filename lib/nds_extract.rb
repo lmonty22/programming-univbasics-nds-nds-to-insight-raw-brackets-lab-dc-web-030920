@@ -36,19 +36,24 @@ require 'directors_database'
 #end 
 
 def directors_totals(nds)
-result = {
- "Stephen Spielberg"=>1357566430,
-  "Russo Brothers"=>2281002470,
-  "James Cameron"=>2571020373,
-  "Spike Lee"=>256624217,
-  "Wachowski Siblings"=>806180282,
-  "Robert Zemeckis"=>1273838385,
-  "Quentin Tarantino"=>662738268,
-  "Martin Scorsese"=>636812242,
-  "Francis Ford Coppola"=>509719258} 
- result 
-end
-        
+  director_index = 0
+  totals = {}
+
+  while director_index < nds.length do
+    director_name = nds[director_index][:name]
+    totals[director_name] = 0
+    movie_index = 0
+
+    while movie_index < nds[director_index][:movies].length do
+      totals[director_name] += nds[director_index][:movies][movie_index][:worldwide_gross]
+      movie_index += 1
+    end
+
+    director_index += 1
+  end
+
+  totals
+end 
 
 #grand_total = 0
 #row_index = 0
