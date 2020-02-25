@@ -23,9 +23,9 @@ director_index = 0
 while director_index < nds.length do 
   movie_index = 0 
   d_total = 0 
-  d_name = nds[director_index][:director_name]
+  d_name = nds[director_index][:name]
   while movie_index < nds[director_index][:movies].length do 
-    d_total += nds[director_index][:movies][movie_index][:world_wide_gross]
+    d_total += nds[director_index][:movies][movie_index][:worldwide_gross]
     movie_index += 1 
   end
   hash[d_name] = d_total
