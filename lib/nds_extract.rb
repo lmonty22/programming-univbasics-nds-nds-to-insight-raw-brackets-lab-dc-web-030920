@@ -13,7 +13,8 @@ require 'directors_database'
   # ...
   # ...
   # Be sure to return the result at the end!
-  
+
+pp directors_database
   
 
 def directors_totals(nds)
